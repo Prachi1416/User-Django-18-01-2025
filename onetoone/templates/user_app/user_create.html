@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>create</title>
+{% endblock %}
+
+{% block content %}
+        <h1><b><u><center>USER CREATION FORM</center></u></b></h1>
+            <div class = 'container'>
+                <form method="post">
+                    {% csrf_token %}
+
+                    {{form|crispy}}
+
+                    <input type="submit" value="CREATE" class="btn btn-success col-6 btn-sm">
+                    <input type="reset" value="RESET" class="btn btn-warning col-6 btn-sm float-end">
+
+                </form>
+            </div>
+{% endblock %}
+

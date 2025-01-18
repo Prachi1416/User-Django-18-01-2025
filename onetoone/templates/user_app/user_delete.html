@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>delete</title>
+{% endblock %}
+
+{% block content %}
+        <h1><b><u><center>USER DELETION FORM</center></u></b></h1>
+            <div class = 'container'>
+                <form method="post">
+                    {% csrf_token %}
+                    <center>
+                    <h1><center>DO YOU WANT TO DELETE</center><span style="color:red;"><center>Name:{{data.name}}</center></span></h1>
+
+                    <input type="submit" value="YES" class="btn btn-success col-2 btn-sm">
+                    <a href="{% url 'uretrive_url' %}"><input type="button" value="NO" class="btn btn-warning col-2 btn-sm"></a>
+                    </center>
+                </form>
+            </div>
+{% endblock %}
+
